@@ -4,6 +4,7 @@ import path = require('path');
 
 import routes from './routes/index';
 import users from './routes/user';
+import products from './routes/products';
 
 var app = express();
 
@@ -15,6 +16,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/api/v1/products', products);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
